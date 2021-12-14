@@ -2,7 +2,7 @@ import unittest
 import pytest
 from pages.LoginScreen import LoginScreen
 from pages.MainScreen import MainPage
-git
+
 
 @pytest.mark.usefixtures("beforeClass")
 class StartOtmTest(unittest.TestCase):
