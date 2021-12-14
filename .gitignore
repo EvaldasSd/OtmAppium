@@ -2,3 +2,9 @@ venv/*
 .idea/*
 .DS_Store
 DS_Store
+*.pyc
+cujo_test_framework.egg-info
+venv/*
+logs/*
+build/*
+dist/*
