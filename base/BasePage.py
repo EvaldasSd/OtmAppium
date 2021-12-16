@@ -54,6 +54,7 @@ class BasePage:
         except:
             self.log.info(
                 "Element not found with LocatorType: " + locatorType + " and with the locatorValue :" + locatorValue)
+            assert False
 
         return element
 
@@ -68,6 +69,8 @@ class BasePage:
         except:
             self.log.info(
                 "Unable to click on Element with LocatorType: " + locatorType + " and with the locatorValue :" + locatorValue)
+            self.takeScreenshot(locatorValue)
+            assert False
 
     def sendText(self, text, locatorValue, locatorType="id"):
         element = None
@@ -80,6 +83,8 @@ class BasePage:
         except:
             self.log.info(
                 "Unable to send text on Element with LocatorType: " + locatorType + " and with the locatorValue :" + locatorValue)
+            self.takeScreenshot(locatorValue)
+            assert False
 
     def isDisplayed(self, locatorValue, locatorType="id"):
         element = None
@@ -93,7 +98,8 @@ class BasePage:
         except:
             self.log.info(
                 " Element with LocatorType: " + locatorType + " and with the locatorValue :" + locatorValue + " is not displayed")
-            return False
+            self.takeScreenshot(locatorValue)
+            assert False
 
     def screenShot(self, screenshotName):
         fileName = screenshotName + "_" + (time.strftime("%d_%m_%y_%H_%M_%S")) + ".png"

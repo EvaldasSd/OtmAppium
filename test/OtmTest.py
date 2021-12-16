@@ -18,7 +18,6 @@ class StartOtmTest(unittest.TestCase):
         loginPage.verifyLoginPage()
         loginPage.clickLocalLoginButton()
         loginPage.clickLocationPopUpOk()
-        loginPage.clickLocation()
         loginPage.clickPermission()
         loginPage.clickLocation()
         loginPage.selectAllowAllTime()

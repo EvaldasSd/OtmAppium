@@ -12,7 +12,7 @@ class LoginScreen(BasePage):
     _loginButton = "com.speedify.onthemove:id/bttnLogin"
     _pagetitle = "Sign In"
     _locationPopUpOk = ".//android.widget.Button[@text='OK']"
-    _permissions = "Permissions"
+    _permissions = "//android.widget.TextView[@text='Permissions']"
     _location = "Location"
     _allowAllTime = "com.android.permissioncontroller:id/allow_always_radio_button"
     _back = "//android.widget.ImageButton[@content-desc='Back']"
@@ -36,11 +36,10 @@ class LoginScreen(BasePage):
 
     @step
     def clickPermission(self):
-        self.clickElement(self._permissions, "text")
+        self.clickElement(self._permissions, "xpath")
 
     @step
     def clickLocationPopUpOk(self):
-        self.isDisplayed(self._location, "xpath")
         self.clickElement(self._locationPopUpOk, "xpath")
 
     @step
